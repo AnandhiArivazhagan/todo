@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Todo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <div class="top-bar">
+    <h2>✨ Premium Todo</h2>
+    <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+  </div>
+
+
+    <div class="input-area">
+  <input type="text" id="taskInput" placeholder="New task...">
+  
+
+  <button class="add-btn" onclick="addTask()">Add</button>
+
+
+     <small id="errorMsg" style="color:red; display:none;">
+  Please enter a task!
+    </small>
+
+    
+</div>
+
+    
+
+  <div class="filters">
+    <button onclick="filterTasks('all')">All</button>
+    <button onclick="filterTasks('completed')">Completed</button>
+    <button onclick="filterTasks('pending')">Pending</button>
+  </div>
+
+  <ul id="taskList"></ul>
+
+  <div class="counter" id="counter"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
