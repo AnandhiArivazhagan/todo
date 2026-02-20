@@ -1,7 +1,7 @@
 let tasks = [];
 let currentFilter = "all";
 
-const API_URL = "http://localhost:3000/todolist";
+const API_URL = "https://todo-backend-0coe.onrender.com/todolist";
 
 
 // Load tasks

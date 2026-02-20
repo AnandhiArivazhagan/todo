@@ -14,9 +14,11 @@ app.use(cors());
 
 
 
-mongoose.connect("mongodb://localhost:27017/todoDB")
+mongoose.connect("mongodb+srv://Anandhi:anandhi_2005@cluster0.favzmu6.mongodb.net/todoDB?appName=Cluster0")
        .then(()=>{console.log(" connected to database")})
        .catch((err)=>{console.log(err)});
+
+// mongodb+srv://Anandhi:anandhi_2005@cluster0.favzmu6.mongodb.net/todoDB?appName=Cluster0
 
 //CRUD operation
  app.get("/todolist", async(req,res)=>{
@@ -47,7 +49,8 @@ app.delete("/todolist/:id",async(req,res)=>{
        res.json({message:"task deleted"});
 });
 
+const PORT=process.env.PORT || 3000;      
 
 //start the server
-app.listen(3000,()=>{console.log("server started")});
+app.listen(PORT,()=>{console.log("server started on port",PORT)});
 
