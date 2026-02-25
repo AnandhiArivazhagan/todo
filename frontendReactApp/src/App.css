@@ -4,8 +4,10 @@
   margin: 0;
 }
 
-
+/* ===================== */
 /* Page Styling */
+/* ===================== */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -14,15 +16,20 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
+/* ===================== */
 /* Main Container */
+/* ===================== */
+
 .container {
   background: white;
   padding: 25px;
   width: 350px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.4s ease;
 }
 
 /* Title */
@@ -31,35 +38,62 @@ h1 {
   margin-bottom: 20px;
 }
 
+/* ===================== */
 /* Input */
+/* ===================== */
+
 .inp {
   width: 70%;
-  padding: 8px;
-  border-radius: 5px;
+  padding: 10px;
+  border-radius: 8px;
   border: 1px solid #ccc;
   outline: none;
+  transition: 0.3s ease;
 }
 
+.inp:focus {
+  border-color: #4caf50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+}
+
+/* ===================== */
 /* Add Button */
+/* ===================== */
+
 .add-btn {
-  padding: 8px 12px;
+  padding: 10px 14px;
   margin-left: 5px;
   border: none;
   background-color: #4caf50;
   color: white;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .add-btn:hover {
-  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
 }
 
+.add-btn:active {
+  transform: scale(0.95);
+}
+
+/* ===================== */
 /* Task List */
+/* ===================== */
+
 .tasklist {
   list-style: none;
   padding: 0;
   margin-top: 20px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Each Task */
@@ -68,55 +102,137 @@ h1 {
   align-items: center;
   justify-content: space-between;
   background: #f9f9f9;
-  padding: 8px;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  animation: fadeIn 0.3s ease forwards;
+  transition: 0.25s ease;
 }
 
+/* Hover lift effect */
+.tasklist li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(184, 18, 18, 0.897);
+}
+
+/* ===================== */
 /* Complete Button */
+/* ===================== */
+
 .comp-btn {
-  width: 20px;
-  height: 20px;
-  padding: 0;
-  box-sizing: border-box;
-  border: 2px solid green;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #4caf50;
   border-radius: 50%;
   background: transparent;
   cursor: pointer;
 
-  display: flex;              /* Center tick properly */
+  display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 14px;            /* Control tick size */
-  line-height: 1;             /* Prevent expansion */
+  font-size: 14px;
+  transition: 0.3s ease;
 }
 
+/* Glow when clicked */
 .comp-btn.marked {
   background-color: #4caf50;
+  box-shadow: 0 0 12px rgba(76, 175, 80, 0.7);
 }
 
+/* ===================== */
 /* Task Text */
+/* ===================== */
+
 .tasktext {
   flex: 1;
   margin-left: 10px;
+  transition: 0.3s ease;
 }
 
+/* Animated strike */
 .taskcomp {
-  text-decoration: line-through;
+  position: relative;
   color: gray;
 }
 
+.taskcomp::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 2px;
+  background: gray;
+  animation: strike 0.3s ease forwards;
+}
+
+@keyframes strike {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* ===================== */
 /* Delete Button */
+/* ===================== */
+
 .dlt-btn {
   border: none;
   background-color: #ff4d4d;
   color: white;
-  padding: 5px 8px;
-  border-radius: 5px;
+  padding: 6px 10px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .dlt-btn:hover {
   background-color: #e60000;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(255, 0, 0, 0.4);
+}
+
+.dlt-btn:active {
+  transform: scale(0.95);
+}
+
+/* ========================= */
+/* 🌙 DARK THEME */
+/* ========================= */
+
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+body.dark .container {
+  background: #1e1e1e;
+  box-shadow: 0 0 30px rgba(76, 175, 80, 0.25);
+}
+
+body.dark .inp {
+  background: #2a2a2a;
+  color: white;
+  border: 1px solid #444;
+}
+
+body.dark .tasklist li {
+  background: #2a2a2a;
+}
+
+body.dark .tasklist li:hover {
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
+}
+
+body.dark .taskcomp {
+  color: #aaa;
+}
+
+body.dark .comp-btn.marked {
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.9);
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
 }
