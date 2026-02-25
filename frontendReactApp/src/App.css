@@ -236,3 +236,23 @@ body.dark .comp-btn.marked {
   display: flex;
   gap: 10px;
 }
+
+/* Parent wrapper */
+.top-input {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Quote */
+.tagline {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #d7f5e9;
+}
+
+/* Input + button row */
+.input-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

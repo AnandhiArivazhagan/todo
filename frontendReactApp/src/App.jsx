@@ -102,7 +102,7 @@ function App() {
   return (
     <div className="app">
       <div className="top-bar">
-        <h2>✨ Premium Todo</h2>
+        <h2> TaskZen </h2>
         <button
           className="theme-btn"
           onClick={() => setDark((prev) => !prev)}
@@ -112,6 +112,7 @@ function App() {
       </div>
 
       <div className="input-area">
+        
         <input
           type="text"
           placeholder="New task..."
