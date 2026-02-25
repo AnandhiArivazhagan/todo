@@ -1,0 +1,122 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Page Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Main Container */
+.container {
+  background: white;
+  padding: 25px;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Input */
+.inp {
+  width: 70%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+/* Add Button */
+.add-btn {
+  padding: 8px 12px;
+  margin-left: 5px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #45a049;
+}
+
+/* Task List */
+.tasklist {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+/* Each Task */
+.tasklist li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9f9f9;
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Complete Button */
+.comp-btn {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  box-sizing: border-box;
+  border: 2px solid green;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+
+  display: flex;              /* Center tick properly */
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;            /* Control tick size */
+  line-height: 1;             /* Prevent expansion */
+}
+
+.comp-btn.marked {
+  background-color: #4caf50;
+}
+
+/* Task Text */
+.tasktext {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.taskcomp {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* Delete Button */
+.dlt-btn {
+  border: none;
+  background-color: #ff4d4d;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dlt-btn:hover {
+  background-color: #e60000;
+}
